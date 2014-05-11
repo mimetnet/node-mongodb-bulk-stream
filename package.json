@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mimetnet/mongodb-bulk-stream"
+    "url": "https://github.com/mimetnet/node-mongodb-bulk-stream"
   },
   "keywords": [
     "mongodb",
