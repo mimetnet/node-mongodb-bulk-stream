@@ -1,0 +1,37 @@
+{
+  "name": "mongodb-bulk-stream",
+  "version": "0.0.1-alpha",
+  "description": "Pipe a stream of objects for bulk update/insert into MongoDB",
+  "main": "index.js",
+  "dependencies": {
+    "readable-stream": "~1.1.0"
+  },
+  "devDependencies": {
+    "mongodb": "^1.4",
+    "tap": ">= 0.4.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/tap ./test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mimetnet/mongodb-bulk-stream"
+  },
+  "keywords": [
+    "mongodb",
+    "mongo",
+    "bulk",
+    "transform",
+    "stream",
+    "pipe"
+  ],
+  "author": {
+    "name": "Matthew I. Metnetsky",
+    "email": "matthew@cowarthill.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
