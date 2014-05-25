@@ -67,7 +67,7 @@ BulkStream.prototype._dequeue = function(done) {
     var self = this, queue = this._state.queue.splice(0);
 
     if (0 === queue.length)
-        return;
+        return done();
 
     this._state.bulk.execute({w:1}, function(error, result) {
         if (error) {
