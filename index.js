@@ -95,6 +95,9 @@ BulkStream.prototype._checkFinish = function() {
 
     if (0 < this._state.queue.length) {
         this._dequeue(this._state.flush);
+    } else {
+        this._state.flush();
+        this._state.flush = null;
     }
 };
 
