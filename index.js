@@ -41,7 +41,7 @@ function BulkStream(collection, options) {
         bulk: collection.initializeOrderedBulkOp(),
         selector: (options.selector || selector),
         update: (options.update || update),
-        highWaterMark: (~~options.highWaterMark || 10)
+        highWaterMark: (~~options.highWaterMark || 100)
     };
 }
 
