@@ -38,6 +38,7 @@ function BulkStream(collection, options) {
     this._state = {
         queue: [],
         flush: null,
+        list: collection,
         bulk: collection.initializeOrderedBulkOp(),
         selector: (options.selector || selector),
         update: (options.update || update),
@@ -75,9 +76,20 @@ BulkStream.prototype._dequeue = function(done) {
         } else if (result.hasWriteErrors()) {
             self.emit('error', result.getWriteErrorAt(0));
         } else {
-            queue.forEach(self.push.bind(self));
-            done();
-            self._checkFinish();
+            var cnt = result.nInserted + result.nUpserted + result.nModified + result.nMatched;
+
+            if (cnt < queue.length) {
+                self.emit('error', new Error('BulkOp did not complete queue'));
+            } else {
+                // push bulk work through stream
+                queue.forEach(self.push.bind(self));
+                // reset bulk so counters don't increment
+                self._state.bulk = self._state.list.initializeOrderedBulkOp();
+                // mark unit as complete
+                done();
+                // check if we're flushed
+                self._checkFinish();
+            }
         }
     });
 };
