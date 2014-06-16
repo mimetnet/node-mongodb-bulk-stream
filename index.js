@@ -51,7 +51,7 @@ BulkStream.prototype._transform = function(chunk, encoding, done) {
     this._state.queue.push(chunk);
 
     if (chunk.hasOwnProperty('_id')) {
-        this._state.bulk.find(this._state.selector(chunk)).updateOne(this._state.update(chunk));
+        this._state.bulk.find(this._state.selector(chunk)).upsert().updateOne(this._state.update(chunk));
     } else {
         this._state.bulk.insert(chunk);
     }
