@@ -49,7 +49,12 @@ function BulkStream(collection, options) {
 util.inherits(BulkStream, Transform);
 
 BulkStream.prototype._transform = function(chunk, encoding, done) {
+    // store input for output
     this._state.queue.push(chunk);
+
+    // pull the raw object out of Mongoose
+    if ('function' === typeof(chunk.toObject))
+        chunk = chunk.toObject({depopulate:1});
 
     if (chunk.hasOwnProperty('_id')) {
         this._state.bulk.find(this._state.selector(chunk)).upsert().updateOne(this._state.update(chunk));
