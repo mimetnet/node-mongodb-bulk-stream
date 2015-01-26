@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "mongodb": "^1.4",
-    "tap": "^0.4"
+    "tap": "^0.5"
   },
   "scripts": {
     "test": "./node_modules/.bin/tap ./test/"
