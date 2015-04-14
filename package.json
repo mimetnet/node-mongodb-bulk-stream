@@ -7,8 +7,8 @@
     "readable-stream": "~1.1.0"
   },
   "devDependencies": {
-    "mongodb": "^1.4",
-    "tap": "^0.5"
+    "mongodb": "^2.0",
+    "tap": "^0.7"
   },
   "scripts": {
     "test": "./node_modules/.bin/tap ./test/"
