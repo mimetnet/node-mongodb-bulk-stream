@@ -1,9 +1,5 @@
 var util = require('util');
-var Transform = require('stream').Transform;
-
-if (!Transform) {
-    Transform = require('readable-stream/transform');
-}
+var Transform = require('readable-stream/transform');
 
 function selector(x) {
     return {_id: x._id};
