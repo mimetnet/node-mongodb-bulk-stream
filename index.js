@@ -77,7 +77,7 @@ BulkStream.prototype._dequeue = function(done) {
         } else if (result.hasWriteErrors()) {
             self.emit('error', result.getWriteErrorAt(0));
         } else {
-            var cnt = result.nInserted + result.nUpserted + result.nModified + result.nMatched;
+            var cnt = result.nInserted + result.nUpserted + result.nModified;
 
             if (cnt < queue.length) {
                 self.emit('error', new Error('BulkOp did not complete queue'));
