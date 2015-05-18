@@ -10,9 +10,6 @@ function update(x) {
 }
 
 function BulkStream(collection, options) {
-    if (!(this instanceof(BulkStream)))
-        return new BulkStream(collection, options);
-
     if ('object' !== typeof(collection))
         throw new TypeError('First argument is not an object');
     if ('function' !== typeof(collection.initializeOrderedBulkOp))
