@@ -8,10 +8,10 @@
   },
   "devDependencies": {
     "mongodb": "^2.0",
-    "tap": "^0.7"
+    "tap": "^1.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tap ./test/"
+    "test": "./node_modules/.bin/tap ./test"
   },
   "repository": {
     "type": "git",
