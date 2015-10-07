@@ -29,9 +29,5 @@
     "name": "Matthew I. Metnetsky",
     "email": "matthew@cowarthill.com"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  "license": "MIT"
 }
