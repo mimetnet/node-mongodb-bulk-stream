@@ -7,8 +7,12 @@
     "readable-stream": "~2.0.0"
   },
   "devDependencies": {
-    "mongodb": "^2.0",
-    "tap": "^1.0"
+    "mongodb-core": "^1.0",
+    "tape": "^4.2"
+  },
+  "peerDependencies": {
+    "kerberos": "^0.0",
+    "mongodb": "^2.0"
   },
   "scripts": {
     "test": "./node_modules/.bin/tap ./test"
