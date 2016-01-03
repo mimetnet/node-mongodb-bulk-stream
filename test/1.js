@@ -1,17 +1,16 @@
-var tap = require('tap')
-    , test = tap.test
+var test = require('tape')
     , bulk;
 
 test('require', function(t) {
     bulk = require('../index.js');
 
     t.ok(bulk, 'mongodb-bulk-stream exists');
-    t.type(bulk, 'function', 'require returns a function');
+    t.equal(typeof bulk, 'function', 'require returns a function');
     t.equal(0, Object.keys(bulk).length, 'no hidden exports');
     t.end();
 });
 
-test('octor', function(t) {
+test('ctor', function(t) {
     t.throws(function() {
         bulk();
     }, {name:'TypeError', message:'First argument is not an object'}, 'throws TypeError');
