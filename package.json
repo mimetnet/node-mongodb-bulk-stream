@@ -1,6 +1,6 @@
 {
   "name": "mongodb-bulk-stream",
-  "version": "0.0.2-alpha",
+  "version": "0.0.2",
   "description": "Pipe a stream of objects for bulk update/insert into MongoDB",
   "main": "index.js",
   "dependencies": {
