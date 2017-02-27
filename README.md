@@ -1,5 +1,7 @@
 #mongodb-bulk-stream
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mimetnet/node-mongodb-bulk-stream.svg)](https://greenkeeper.io/)
+
 Pipe a stream of objects for bulk update/insert into [MongoDB](//mongodb.github.io/node-mongodb-native/)
 
 
